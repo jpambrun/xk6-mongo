@@ -78,7 +78,7 @@ func (c *Client) Agg(database string, collection string, pipeline interface{}) [
 
 	
 	log.Print("pipeline is ", pipeline)
-	cur, err := col.Aggregate(context.TODO(), filter)
+	cur, err := col.Aggregate(context.TODO(), pipeline)
 	if err != nil {
 		log.Fatal(err)
 		// return nil
